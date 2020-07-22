@@ -4,14 +4,13 @@
 
  1.  Understand the concept of Prefix Sum array from GeekForGeeks portal. Solve some questions on that. This will be a good start in dealing with beginner level questions of Arrays. Example Here : HowManySmallerThanThis.cpp
 
-Another Example from GFG, 
+    Another Example from GFG, 
 
-Consider an array of size n with all initial values as 0. Perform given ‘m’ add operations from index ‘a’ to ‘b’ and evaluate highest element in array. An add operation adds 100 to all elements from a to b
-
-1 : Run a loop for 'm' times, inputting 'a' and 'b'.
-2 : Add 100 at index 'a' and subtract 100 from index 'b+1'.
-3 : After completion of 'm' operations, compute the prefix sum array.
-4 : Scan the largest element and we're done.
+    Consider an array of size n with all initial values as 0. Perform given ‘m’ add operations from index ‘a’ to ‘b’ and evaluate highest element in array. An add operation adds 100 to all elements from a to b
+        1 : Run a loop for 'm' times, inputting 'a' and 'b'.
+        2 : Add 100 at index 'a' and subtract 100 from index 'b+1'.
+        3 : After completion of 'm' operations, compute the prefix sum array.
+        4 : Scan the largest element and we're done.
 
  2. Max Sum Contiguous Array is another classical problem in this category. Try get the intuition of such problems where you have a sliding window and you keep traversing as long as it is going good for you and otherwise flip it back to start while saving the last config in max_sum_so_far. That's a classic approach in many beginner level problems. Example here : MaxSumSubarray.cpp
 
