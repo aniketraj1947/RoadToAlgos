@@ -2,8 +2,8 @@
 
 Categories :
 
-1.
-2.
+1. Arrays
+2. Maths
 3.
 .
 .
