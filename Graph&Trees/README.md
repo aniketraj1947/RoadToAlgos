@@ -28,6 +28,7 @@
 
     Implementation : First we'll have `vector<int> adj[N];` and `bool visited[N]`. We'll call `dfs(u)` and it will begin dfs at `u` in the below function.
     <code>
+
         void dfs(int s) {
 
             if (visited[s]) return;
@@ -43,7 +44,6 @@
             }
 
         }
-        
     </code>
 
 5.  Breadth First Search :
