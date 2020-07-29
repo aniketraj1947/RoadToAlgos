@@ -28,14 +28,14 @@
 
     Implementation : First we'll have `vector<int> adj[N];` and `bool visited[N]`. We'll call `dfs(u)` and it will begin dfs at `u` in the below function.
 
-    `void dfs(int s) {`
-        `if (visited[s]) return;`
-        `visited[s] = true;`
-        `// process node s`
-        `for (auto u: adj[s]) {`
-            `dfs(u);`
-        `}`
-    `}`
+    `void dfs(int s) {` <br/>
+        `if (visited[s]) return;` <br/>
+        `visited[s] = true;`<br/>
+        `// process node s`<br/>
+        `for (auto u: adj[s]) {`<br/>
+            `dfs(u);`<br/>
+        `}`<br/>
+    `}`<br/>
 
 5.  Breadth First Search :
 
