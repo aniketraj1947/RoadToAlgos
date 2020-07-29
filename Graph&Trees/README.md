@@ -27,15 +27,16 @@
 4.  Depth-First Search (DFS) - O(n+m) : You'd mostly use DFS in most of your graph questions. It begins at a starting node, and proceeds to all other nodes that are reachable from the starting node using the edges of the graph. 
 
     Implementation : First we'll have `vector<int> adj[N];` and `bool visited[N]`. We'll call `dfs(u)` and it will begin dfs at `u` in the below function.
-
-    `void dfs(int s) {` <br/>
-    &nbsp;&nbsp;&nbsp;`if (visited[s]) return;` <br/>
-    &nbsp;&nbsp;&nbsp;`visited[s] = true;`<br/>
-    &nbsp;&nbsp;&nbsp;`// process node s`<br/>
-    &nbsp;&nbsp;&nbsp;`for (auto u: adj[s]) {`<br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`dfs(u);`<br/>
-    &nbsp;&nbsp;&nbsp;`}`<br/>
-    `}`<br/>
+    <code>
+        void dfs(int s) {
+            if (visited[s]) return;
+            visited[s] = true;
+            // process node s
+            for (auto u: adj[s]) {
+                dfs(u);
+            }
+        }
+    </code>
 
 5.  Breadth First Search :
 
