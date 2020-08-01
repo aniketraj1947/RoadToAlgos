@@ -55,43 +55,62 @@
         int distance[N];
     </code>
 
-        New nodes are always added to the end of the queue, and the node at the beginning of the queue is the next node to be processed.
+    New nodes are always added to the end of the queue, and the node at the beginning of the queue is the next node to be processed.
 
     <code>
         visited[x] = true;
+
         distance[x] = 0;
+
         q.push(x);
+
         while (!q.empty()) {
+
             int s = q.front(); q.pop();
+
             // process node s
+
             for (auto u : adj[s]) {
+
                 if (visited[u]) continue;
+
                 visited[u] = true;
+
                 distance[u] = distance[s]+1;
+
                 q.push(u);
+
             }
+
         }
+
     </code>
 
-6. **Application : ** The first basic 3 application that we can solve now is : Connectivity Check, Finding Cycles, Bipartite Check. If you run DFS on a node and you get all nodes visited, that means the graph is connected. Also, you can find number of components? Look at the problems to understand how to find cycles and check bipartiteness on a graph.
+6. **Application :** The first basic 3 application that we can solve now is : Connectivity Check, Finding Cycles, Bipartite Check. If you run DFS on a node and you get all nodes visited, that means the graph is connected. Also, you can find number of components? Look at the problems to understand how to find cycles and check bipartiteness on a graph.
 
-7.  **Shortest Path : ** To find the shortest path from a node x to all other nodes, we may either use Dijkstra Algorithm with complexity O(n + mlogm) but it won't work with negative edge weights. For negative edge weights, we may use BellmanFord Algorithm but then the complexity would be O(nm). To find shortest distance between all pairs of nodes, we may use Floyd-Warshall Algorithm using dp in O(n^3).
+7.  **Shortest Path :** To find the shortest path from a node x to all other nodes, we may either use Dijkstra Algorithm with complexity O(n + mlogm) but it won't work with negative edge weights. For negative edge weights, we may use BellmanFord Algorithm but then the complexity would be O(nm). To find shortest distance between all pairs of nodes, we may use Floyd-Warshall Algorithm using dp in O(n^3).
 
-8.  **Tree Algorithms : ** The best and general way to traverse a tree is to run a dfs() at a random node and since trees are always connected and acyclic, you'll visit each node of the tree. Look the code below :
+8.  **Tree Algorithms :** The best and general way to traverse a tree is to run a dfs() at a random node and since trees are always connected and acyclic, you'll visit each node of the tree. Look the code below :
 
     <code>
         void dfs(int s, int e) {
+
             // process node s
+
             for (auto u : adj[s]) {
+
                 if (u != e) dfs(u, s);
+
             }
+
         }
+        
     </code>
 
     As you can see, The function is given two parameters: the current node s and the previous node e. The purpose of the parameter e is to make sure that the search only moves to nodes that have not been visited yet. Try to visualize a dry run of the above recursion.
 
-9.  **Application of Tree Traversal : ** Let's start with a simple question : Calculate in O(n) time for each node of a rooted tree the number of nodes in its subtree. Check out : CountNodesInSubTree.cpp
+9.  **Application of Tree Traversal :** Let's start with a simple question : Calculate in O(n) time for each node of a rooted tree the number of nodes in its subtree. Check out : CountNodesInSubTree.cpp
 
-10. **Binary Trees : ** Full Binary Tree means every node has either 0 or 2 nodes. A complete binary tree has all the levels filled except for the last level and the last level has all its nodes as much as to the left. Perfect Binary Tree means all internal nodes have 2 children and all the leaf nodes are at the same level. 
+10. **Binary Trees :** Full Binary Tree means every node has either 0 or 2 nodes. A complete binary tree has all the levels filled except for the last level and the last level has all its nodes as much as to the left. Perfect Binary Tree means all internal nodes have 2 children and all the leaf nodes are at the same level. 
 
-11. **Important Queries in a Tree : ** 
+11. **Important Queries in a Tree :** 
