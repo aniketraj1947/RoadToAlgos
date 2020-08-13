@@ -1,4 +1,4 @@
-#   Arrays
+#   Graph/Trees
 
 ## Here are few tips for solving questions which involves Graph/Tree Data Structures
 
@@ -104,13 +104,20 @@
             }
 
         }
-        
+
     </code>
 
     As you can see, The function is given two parameters: the current node s and the previous node e. The purpose of the parameter e is to make sure that the search only moves to nodes that have not been visited yet. Try to visualize a dry run of the above recursion.
 
-9.  **Application of Tree Traversal :** Let's start with a simple question : Calculate in O(n) time for each node of a rooted tree the number of nodes in its subtree. Check out : CountNodesInSubTree.cpp
+9.  **Application of Tree Traversal :** Let's start with a simple question : Calculate in O(n) time for each node of a rooted tree the number of nodes in its subtree. Check out : CountNodesInSubTree.cpp . It turns out that depth-first search can be used to both check if a directed graph contains a cycle and, if it does not contain a cycle, to construct a topological sort.
 
 10. **Binary Trees :** Full Binary Tree means every node has either 0 or 2 nodes. A complete binary tree has all the levels filled except for the last level and the last level has all its nodes as much as to the left. Perfect Binary Tree means all internal nodes have 2 children and all the leaf nodes are at the same level. 
 
-11. **Important Queries in a Tree :** 
+10. **Important :** Pre and Post numbers are widely used in graph algorithms. For example, they can be used to find out whether a particular node lies in the sub-tree of another node. To find whether u lies in the sub-tree of v or not we just compare the pre and post number of u and v. If pre[u] > pre[v] and post[u] < post[v] then u lies in the sub-tree of v otherwise not. You can see above example for more clarification.
+
+10. **Topological Sort :** A topological sort is an ordering of the nodes of a directed graph such that if there is a path from node a to node b, then node a appears before node b in the ordering.
+
+
+11. **Important Queries in a Tree :** Now this is the heart of this part. The Tree queries like : *What is the kth ancestor of a node?* OR *What is the sum of the values of nodes in a subtree of a node?* OR *What is the sum of values on a path between two nodes?* OR *What is the **Lowest Common Ancestor (LCA)** of two given nodes?*
+
+11. **Q1. Find the kth ancestor, ancestor(x,k) in O(log k) :** For one node, it'd take O(k) but after preprocessing in O(n log n) time, we can get the query *ancestor(x,k)* in O(log k) time.  
